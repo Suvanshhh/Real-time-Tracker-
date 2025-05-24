@@ -1,0 +1,17 @@
+Check if the browser supports geolocation
+
+Set options for High Accuracy Geolocation, a 5-second timeout, and a maximum age of 0 seconds. 
+
+Use watchPosition to get the current position of the device, continuously.
+
+Emit the lattitude and longitude via a socket with "send-location". Log any errors to the console.
+
+Initialize a map centered at coordinates (0,0) with a zoom level of 15 using leaflet. Add OpenStreetMap tiles to the map.
+
+Create an empty object markers to store the user's current position.
+
+When recieving location via the socket, extract id, lattitude, and longitude, and center the map on the new coordinates.
+
+If a markerr for the user already exists, update its position. If not, create a new marker and add it to the map. 
+
+When a user disconnects, remove their marker from the map and delete it from the markers object.
